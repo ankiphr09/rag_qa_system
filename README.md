@@ -49,12 +49,31 @@ pip install -r requirements.txt
 ```
 
 4. Set up environment variables:
-```bash
-OPENAI_API_KEY=your_openai_api_key
-PINECONE_API_KEY=your_pinecone_api_key
-PINECONE_ENVIRONMENT=your_pinecone_environment
-MONGODB_CONNECTION_STRING=your_mongodb_connection_string
-```
+   - Copy `.env.example` to `.env`:
+     ```bash
+     cp .env.example .env     # Linux/Mac
+     # OR
+     copy .env.example .env   # Windows
+     ```
+   - Edit `.env` and fill in your actual credentials:
+     ```bash
+     # OpenAI Configuration
+     OPENAI_API_KEY=your_openai_api_key_here
+
+     # Pinecone Configuration
+     PINECONE_API_KEY=your_pinecone_api_key_here
+     PINECONE_ENVIRONMENT=your_pinecone_environment_here
+     PINECONE_INDEX_NAME=your_pinecone_index_name_here
+
+     # MongoDB Configuration
+     MONGODB_CONNECTION_STRING=your_mongodb_connection_string_here
+
+     # Application Configuration
+     DEBUG=True
+     API_PORT=8000
+     API_HOST=0.0.0.0
+     ```
+   Note: Never commit the `.env` file with actual credentials. It's already in `.gitignore`.
 
 ## Project Structure
 
