@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  rag_qa_system:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - PINECONE_API_KEY=${PINECONE_API_KEY}
+      - PINECONE_ENVIRONMENT=${PINECONE_ENVIRONMENT}
+      - MONGODB_CONNECTION_STRING=${MONGODB_CONNECTION_STRING}
+    volumes:
+      - ./app:/app/app
+    restart: unless-stopped
